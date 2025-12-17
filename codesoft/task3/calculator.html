@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body{font-family:Arial;}
+    .buttons{display:grid;grid-template-columns:repeat(4,50px);gap:5px;}
+    input{width:210px;height:30px;text-align:right;}
+  </style>
+</head>
+<body>
+<h3> Calculator</h3>
+<input type="text" id="screen" disabled>
+<div class="buttons">
+  <button onclick="typeValue('7')">7</button>
+  <button onclick="typeValue('8')">8</button>
+  <button onclick="typeValue('9')">9</button>
+  <button onclick="typeValue('/')">/</button>
+
+  <button onclick="typeValue('4')">4</button>
+  <button onclick="typeValue('5')">5</button>
+  <button onclick="typeValue('6')">6</button>
+  <button onclick="typeValue('*')">*</button>
+
+  <button onclick="typeValue('1')">1</button>
+  <button onclick="typeValue('2')">2</button>
+  <button onclick="typeValue('3')">3</button>
+  <button onclick="typeValue('-')">-</button>
+
+  <button onclick="resetScreen()">C</button>
+  <button onclick="typeValue('0')">0</button>
+  <button onclick="showResult()">=</button>
+  <button onclick="typeValue('+')">+</button>
+</div>
+<script>
+  let screenBox = document.getElementById("screen");
+  function typeValue(val){
+    screenBox.value = screenBox.value + val;
+  }
+  function resetScreen(){
+    screenBox.value = "";
+  }
+  function showResult(){
+    screenBox.value = eval(screenBox.value);
+  }
+</script>
+
+</body>
+</html>
